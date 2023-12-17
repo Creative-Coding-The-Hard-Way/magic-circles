@@ -1,3 +1,16 @@
 body {
-  background-color: hotpink;
+  background-color: darkgrey;
+}
+
+main {
+  padding-top: 2.5vh;
+  min-width: 95vw;
+  max-width: 95vw;
+  width: 95vw;
+  min-height: 800px;
+  max-height: 95vh;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

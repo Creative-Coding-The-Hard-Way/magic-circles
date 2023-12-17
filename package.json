@@ -1,5 +1,5 @@
 {
-  "name": "typescript-browser-starter",
+  "name": "magic-circles",
   "version": "1.0.0",
   "description": "",
   "repository": {
@@ -17,12 +17,15 @@
     "ci": "npm run check && npm run build"
   },
   "source": [
-    "src/index.html"
+    "src/index.html",
+    "src/fonts/Daedra.otf",
+    "src/fonts/Oblivion.ttf",
+    "src/fonts/OblivionWorn.ttf"
   ],
   "targets": {
     "default": {
       "distDir": "./output",
-      "publicUrl": "/typescript-browser-starter/"
+      "publicUrl": "/magic-circles/"
     }
   },
   "browserlist": [
@@ -33,6 +36,7 @@
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.8.2",
     "@parcel/transformer-webmanifest": "^2.8.2",
+    "@types/p5": "^1.7.5",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.2",
@@ -44,5 +48,9 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "p5": "^1.9.0"
   }
 }

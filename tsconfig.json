@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "isolatedModules": true
+    "isolatedModules": true,
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*"
