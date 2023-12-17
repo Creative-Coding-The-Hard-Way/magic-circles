@@ -117,7 +117,7 @@ export class Sequence {
     const global_time = p5.millis() / 1000.0 - this.reset_time;
     let frame = p5.frameCount - this.reset_frame;
 
-    if (frame > this.totalFrameCount()) {
+    if (frame > this.totalFrameCount() + 61) {
       this.restart(p5);
     }
 
