@@ -3,7 +3,8 @@ import { Sequence } from "./sequence";
 import { circle_arc_lerp, line_lerp } from "./animations";
 
 export default function sketch(p5: P5, size: number) {
-  let font;
+  // initialized in preload()
+  let font: P5.Font = undefined;
 
   const diameter = size * 0.75;
   const radius = diameter * 0.5;
@@ -140,7 +141,7 @@ export default function sketch(p5: P5, size: number) {
   };
 
   p5.keyReleased = () => {
-    magic_circle.save(p5, "animation.gif");
+    //magic_circle.save(p5, "animation.gif");
     magic_circle.restart(p5);
   };
 
