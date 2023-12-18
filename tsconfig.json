@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "isolatedModules": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "lib": ["es2021", "DOM"],
   },
   "include": [
     "src/**/*"

@@ -1,11 +1,13 @@
 import P5 from "p5";
-import { Sequence } from "./sequence";
-import { circle_arc_lerp, line_lerp } from "./animations";
+import { Meta } from "../lib/page";
+import { Sequence } from "../lib/sequence";
+import { circle_arc_lerp, line_lerp } from "../lib/animations";
 
-export default function sketch(p5: P5, size: number) {
+function sketch(p5: P5) {
   // initialized in preload()
   let font: P5.Font = undefined;
 
+  const size = 800;
   const diameter = size * 0.75;
   const radius = diameter * 0.5;
   const em = size / 800;
@@ -149,3 +151,11 @@ export default function sketch(p5: P5, size: number) {
     magic_circle.draw(p5);
   };
 }
+
+const meta: Meta = {
+  name: "Inscribed Square",
+  description:
+    "An animation based on the geometric construction of an inscribed square.",
+  sketch,
+};
+export default meta;
