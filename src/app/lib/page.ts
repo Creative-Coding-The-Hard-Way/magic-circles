@@ -43,6 +43,40 @@ export class Page {
     document.getElementById("app_title")!.innerText = title;
   }
 
+  InstallSketches(sketches: Meta[]) {
+    const hashed_sketches: Map<string, Meta> = new Map();
+    const nav = document.getElementById("sketch_list")!;
+    for (const sketch of sketches) {
+      const hash = "#" + sketch.name.toLowerCase().replaceAll(" ", "-");
+      console.log("adding sketch: ", hash);
+      hashed_sketches.set(hash, sketch);
+
+      const link = document.createElement("a");
+      link.href = hash;
+      link.innerText = sketch.name;
+      nav.appendChild(link);
+    }
+
+    const hash_changed = () => {
+      console.log("hash changed", window.location.hash);
+      if (hashed_sketches.has(window.location.hash)) {
+        this.InstallSketch(hashed_sketches.get(window.location.hash));
+      } else {
+        console.log(
+          "Got hash ",
+          window.location.hash,
+          " but expected one of ",
+          [...hashed_sketches.keys()]
+        );
+        if (window.location.hash == "") {
+          this.InstallSketch(sketches[0]);
+        }
+      }
+    };
+    hash_changed();
+    window.onhashchange = hash_changed;
+  }
+
   /**
    * Install a sketch to the current page.
    *

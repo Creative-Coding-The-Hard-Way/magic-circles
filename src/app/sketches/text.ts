@@ -7,12 +7,12 @@ function sketch(p5: P5) {
   };
 
   p5.draw = () => {
-    p5.background("blue");
+    p5.background("grey");
   };
 }
 
 const meta: Meta = {
-  name: "Something With text",
+  name: "Text Or Something",
   description: "Not sure yet.",
   sketch,
 };
